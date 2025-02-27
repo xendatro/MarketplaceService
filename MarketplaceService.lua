@@ -33,7 +33,7 @@ end
 
 _MarketplaceService.ProcessReceipt = function(receiptInfo: ReceiptInfo)
 	if Functions[receiptInfo.ProductId] then
-		return Functions[receiptInfo.ProductId]
+		return Functions[receiptInfo.ProductId](receiptInfo: ReceiptInfo)
 	end
 	warn("Product function not found")
 	return Enum.ProductPurchaseDecision.NotProcessedYet
